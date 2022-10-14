@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using Hashtable = ExitGames.Client.Photon.Hashtable; // 유니티에서 제공하는 hashtable과 겹치기 때문에 필요!
+using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviourPunCallbacks//,IPunObservable
 {
@@ -97,5 +98,15 @@ public class ButtonManager : MonoBehaviourPunCallbacks//,IPunObservable
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
     {
            ReadyStatusRenew();
+    }
+
+    public override void OnLeftRoom()
+    {
+        SceneManager.LoadScene("LobbyScene");
+    }
+
+    public void OnExitClick()
+    {
+        PhotonNetwork.LeaveRoom();
     }
 }
