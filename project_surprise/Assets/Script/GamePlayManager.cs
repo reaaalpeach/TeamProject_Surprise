@@ -24,4 +24,5 @@ public class GamePlayManager : MonoBehaviourPunCallbacks
         else
             PhotonNetwork.Instantiate("SweetPotato", startPos[Random.Range(0, startPos.Length)].position, Quaternion.Euler(new Vector3(0, 0, 0)));
     }
+
 }
