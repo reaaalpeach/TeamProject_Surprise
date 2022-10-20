@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         }
     }
 
-    public void Attack()
+    public void Attack()//버튼 안에 onclick으로 들어가 있다
     {
         animator.SetTrigger("Attack");
         StartCoroutine("Swing");
