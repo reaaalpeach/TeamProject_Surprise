@@ -79,12 +79,10 @@ public class AIMovement : MonoBehaviour
 
         if (randNum == (int)State.Idle)
         {
-            Debug.Log("´ë±â");
             Idle();
         }
         else if(randNum == (int)State.walk)
         {
-            Debug.Log("°È±â");
             Walk();
         }
     }
