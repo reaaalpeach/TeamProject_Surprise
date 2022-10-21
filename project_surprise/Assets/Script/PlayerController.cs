@@ -5,6 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviourPunCallbacks
 {
@@ -53,6 +54,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+
+        if (SceneManager.GetActiveScene().name == "GameScene") // 게임씬에서는 닉네임패널 끄기
+            playerName.gameObject.SetActive(false);
 
         if (PhotonNetwork.IsConnected)
             pv.RPC("GetPlayerName", RpcTarget.All);
@@ -143,7 +147,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             if (1 < runTime / runMaxTime) //달릴 수 있는 총 시간을 모두 소모한 경우
             {
-                //runFX.Play();
                 playerInput.run = false;//달리지 않는 상태라는 bool값 갱신
                 //runTime = runMaxTime;
                 runCooltimePanel.GetComponent<CoolTime>().SetCoolTime(runCooltime);//coolTime panel에 달리기 쿨타임 값 전달
@@ -153,7 +156,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
         }
         else if(!playerInput.run && runTime > 0)//달리기 버튼에서 손을 땠는데 달릴 수 있는 총 시간을 아직 소모하지 않은 경우
         {
-            //runFX.Stop();
             runTime -= Time.deltaTime;//runTime 충전
             if (runTime < 0)//Time.deltaTime을 빼고 있어서 딱 0이 되지 않기 때문에 0보다 작아지면 0값으로 만들어준다
             {
@@ -183,8 +185,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
     IEnumerator Die()
     {
         animator.SetTrigger("Die");
+        PhotonNetwork.LocalPlayer.CustomProperties["준비완료"] = 0;
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.5f);
         PhotonNetwork.Destroy(gameObject);
     }
 
@@ -196,10 +199,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
     IEnumerator Swing()
     {
         yield return new WaitForSeconds(0.1f);
-        meleeArea.enabled = true;
+        if(SceneManager.GetActiveScene().name == "GameScene")
+        {
+            meleeArea.enabled = true;
+        }
         audioSource.PlayOneShot(hitSound);
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         meleeArea.enabled = false;
         Instantiate(attackFX, attackPos.position, attackPos.rotation);
     }
