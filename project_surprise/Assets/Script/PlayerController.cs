@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public void Attack()//버튼 안에 onclick으로 들어가 있다
     {
         animator.SetTrigger("Attack");
-        StartCoroutine("Swing");
+        pv.RPC("CheckingAttackArea_Particle", RpcTarget.All);
         atkCooltimePanel.GetComponent<CoolTime>().SetCoolTime(atkCooltime);//쿨타임 패널에 공격 쿨타임 정보 넘겨주기
         atkCooltimePanel.SetActive(true);//쿨타임 패널 활성화. -> 쿨타임 동안 버튼을 비활성화 시키고 쿨타임 시간만큼 돌아가는 패널 위의 슬라이더를 생성함.
     }
@@ -188,6 +188,11 @@ public class PlayerController : MonoBehaviourPunCallbacks
         PhotonNetwork.Destroy(gameObject);
     }
 
+    [PunRPC]
+    void CheckingAttackArea_Particle()
+    {
+        StartCoroutine(Swing());
+    }
     IEnumerator Swing()
     {
         yield return new WaitForSeconds(0.1f);
