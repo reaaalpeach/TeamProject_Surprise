@@ -186,6 +186,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         animator.SetTrigger("Die");
         PhotonNetwork.LocalPlayer.CustomProperties["준비완료"] = 0;
+        PhotonNetwork.LocalPlayer.CustomProperties["Live"] = 0;
 
         yield return new WaitForSeconds(1.5f);
         PhotonNetwork.Destroy(gameObject);
