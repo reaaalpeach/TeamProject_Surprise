@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public bool isMove { get; private set; }
     public bool isReady { get; private set; }
 
+    public bool isDead { get; private set; }
+
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
