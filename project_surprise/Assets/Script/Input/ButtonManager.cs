@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using Hashtable = ExitGames.Client.Photon.Hashtable; // 유니티에서 제공하는 hashtable과 겹치기 때문에 필요!
+using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviourPunCallbacks
 {
@@ -15,7 +16,6 @@ public class ButtonManager : MonoBehaviourPunCallbacks
     Text playerStatus = null;
     int readyButton = 0;
     int readyCnt = 0;
-    bool isReady = false;
 
     [Header("Run")]
     [SerializeField] Button runButton;
@@ -30,10 +30,18 @@ public class ButtonManager : MonoBehaviourPunCallbacks
     {
         playerInput = FindObjectOfType<PlayerInput>();
 
-        if (PhotonNetwork.IsMasterClient)
+        if (SceneManager.GetActiveScene().name == "GameScene")
+        {
+            Debug.Log("GameScene");
             readyText.gameObject.SetActive(false);
+        }
         else
-            readyText.gameObject.SetActive(true);
+        {
+            if (PhotonNetwork.IsMasterClient)
+                readyText.gameObject.SetActive(false);
+            else
+                readyText.gameObject.SetActive(true);
+        }
         
         PlayerState();
     }
@@ -85,20 +93,15 @@ public class ButtonManager : MonoBehaviourPunCallbacks
         Debug.Log("readyCnt : " + readyCnt);
         if (PhotonNetwork.IsMasterClient)
         {
-            if (!isReady) // 방장 준비버튼이 바로 활성화 되는 걸 막으려고 넣음
-            {
-                readyCnt -= 1;
-                isReady = true;
-            }
-            if ((readyCnt == PhotonNetwork.CurrentRoom.PlayerCount) && isReady ) // 방장의 레디카운트가 방장빼고 다른 플레어어 수와 같으면
+            if ((readyCnt == PhotonNetwork.CurrentRoom.PlayerCount) && (PhotonNetwork.CurrentRoom.PlayerCount > 1)) // 방장의 레디카운트가 방장빼고 다른 플레어어 수와 같으면
             {
                 readyText.gameObject.SetActive(true); // 방장의 준비버튼 활성화
                 readyText.text = "게임을 시작하려면 눌러주세요!";
+
+                if (SceneManager.GetActiveScene().name == "GameScene")
+                    readyText.gameObject.SetActive(false);
             }
-            else if((readyCnt != PhotonNetwork.CurrentRoom.PlayerCount) && isReady) // 모두 레디가되서 방장의 준비버튼이 활성화榮쨉 도중에 다른 플레이어 입장 시 다시 준비버튼 꺼주기
-            {
-                readyText.gameObject.SetActive(false); // 방장의 준비버튼 활성화
-            }
+            else readyText.gameObject.SetActive(false);
         }
     }
 
@@ -153,5 +156,17 @@ public class ButtonManager : MonoBehaviourPunCallbacks
         Debug.Log("플레이어 퇴장");
         PlayerState();
         ReadyStatusRenew();
+    }
+
+    public void LeaveRoom()
+    {
+        PhotonNetwork.LeaveRoom();
+        Debug.Log("방에서 나가서 로비로 옴1");
+    }
+
+    public override void OnLeftRoom() //  PhotonNetwork.LeaveRoom()이 불리면 자동으로 불림
+    {
+        SceneManager.LoadScene("Lobby");
+        Debug.Log("방에서 나가서 로비로 옴2");
     }
 }

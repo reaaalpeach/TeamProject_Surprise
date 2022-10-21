@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class AIMovement : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class AIMovement : MonoBehaviour
     Rigidbody rigid;
     Animator animator;
     Collider col;
+    PhotonView pv;
 
     // Start is called before the first frame update
     void Start()
@@ -114,4 +117,25 @@ public class AIMovement : MonoBehaviour
         }
     }
     #endregion
+
+    void Check_Die()
+    {
+        StartCoroutine("Die");
+    }
+
+    IEnumerator Die()
+    {
+        animator.SetTrigger("Die");
+
+        yield return new WaitForSeconds(1.5f);
+        PhotonNetwork.Destroy(gameObject);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Attack"))
+        {
+            StartCoroutine("Die");
+        }
+    }
 }

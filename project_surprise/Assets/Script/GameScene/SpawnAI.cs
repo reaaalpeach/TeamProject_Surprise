@@ -24,7 +24,10 @@ public class SpawnAI : MonoBehaviour
                 float randZ = Random.Range((float)rightDown.position.z, (float)leftUp.position.z);
                 Vector3 randPos = new Vector3(randX, 0, randZ);
                 Vector3 randRot = new Vector3(0f, Random.Range(0, 360f), 0f);
-                PhotonNetwork.Instantiate("PotatoAI", randPos, Quaternion.Euler(randRot));
+                int random = Random.Range(0, 2);
+                if (random == 0)
+                    PhotonNetwork.Instantiate("PotatoAI", randPos, Quaternion.Euler(randRot));
+                else PhotonNetwork.Instantiate("SweetPotatoAI", randPos, Quaternion.Euler(randRot));
             }
         }
     }

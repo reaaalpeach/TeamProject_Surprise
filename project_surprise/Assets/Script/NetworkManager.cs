@@ -26,6 +26,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     void Awake()
     {
+        if(PhotonNetwork.IsConnected)
+        {
+            Debug.Log("방에서 나가서 로비로 옴3");
+            PhotonNetwork.LocalPlayer.CustomProperties["준비완료"] = 0;
+            nicknameInputPanel.SetActive(false);
+            joinRoomPanel.SetActive(true);
+        }
+
         PhotonNetwork.AutomaticallySyncScene = true; // 방장이 혼자 씬을 로딩하면, 나머지 사람들 자동으로 싱크됨
 
         PhotonNetwork.SendRate = 60;
