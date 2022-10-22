@@ -9,7 +9,6 @@ using Hashtable = ExitGames.Client.Photon.Hashtable; // 유니티에서 제공하는 hash
 
 public class CameraSetup : MonoBehaviourPunCallbacks
 {
-    List<GameObject> playerList = new List<GameObject>();
     void Start()
     {
         if(photonView.IsMine)
@@ -18,16 +17,5 @@ public class CameraSetup : MonoBehaviourPunCallbacks
             cam.Follow = transform;
             cam.LookAt = transform;
         }
-
-        GameObject[] tmpList = GameObject.FindGameObjectsWithTag("Player");
-        for(int i = 0; i < tmpList.Length; i++)
-        {
-            playerList.Add(tmpList[i]);
-        }
-    }
-
-    public override void OnPlayerPropertiesUpdate(Photon.Realtime.Player targetPlayer, Hashtable changedProps)
-    {
-        
     }
 }
