@@ -28,7 +28,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         if(PhotonNetwork.IsConnected)
         {
-            Debug.Log("방에서 나가서 로비로 옴3");
+            Debug.Log("방에서 로비로 옴3");
             PhotonNetwork.LocalPlayer.CustomProperties["준비완료"] = 0;
             nicknameInputPanel.SetActive(false);
             joinRoomPanel.SetActive(true);

@@ -45,6 +45,7 @@ MonoBehaviour:
   - ReadyButton
   - PlayerState
   - CheckingAttackArea_Particle
+  - GetName
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

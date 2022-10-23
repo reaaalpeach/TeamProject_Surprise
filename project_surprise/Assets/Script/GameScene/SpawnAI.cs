@@ -31,10 +31,4 @@ public class SpawnAI : MonoBehaviour
             }
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

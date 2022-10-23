@@ -13,7 +13,6 @@ public class ButtonManager : MonoBehaviourPunCallbacks
     PlayerInput playerInput;
     public Text readyText;
 
-    Text playerStatus = null;
     int readyButton = 0;
     int readyCnt = 0;
 
@@ -105,16 +104,15 @@ public class ButtonManager : MonoBehaviourPunCallbacks
         }
     }
 
-    //[PunRPC]
     void PlayerState()
     {
         Transform[] childList = scrollContent.GetComponentsInChildren<Transform>();
         Debug.Log("자식오브젝트 " + childList.Length);
-        if(childList != null)
+        if (childList != null)
         {
             for (int i = 1; i < childList.Length; i++)
             {
-                if(childList[i] != scrollContent)
+                if (childList[i] != scrollContent)
                 {
                     Destroy(childList[i].gameObject);
                     Debug.Log("list 삭제");
@@ -122,7 +120,7 @@ public class ButtonManager : MonoBehaviourPunCallbacks
             }
         }
 
-        for(int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
+        for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
         {
             GameObject list = Instantiate(playerList, scrollContent);
             Debug.Log("list 생성");
@@ -131,7 +129,7 @@ public class ButtonManager : MonoBehaviourPunCallbacks
 
             playerName.text = (string)PhotonNetwork.PlayerList[i].CustomProperties["닉네임"];
             Debug.Log((string)PhotonNetwork.PlayerList[i].CustomProperties["닉네임"]);
-            
+
             bool isReady1 = 1 == (int)PhotonNetwork.PlayerList[i].CustomProperties["준비완료"];
             ready.text = isReady1 ? "Ready" : "";
         }
@@ -161,12 +159,12 @@ public class ButtonManager : MonoBehaviourPunCallbacks
     public void LeaveRoom()
     {
         PhotonNetwork.LeaveRoom();
-        Debug.Log("방에서 나가서 로비로 옴1");
+        Debug.Log("방에서 로비로 옴1");
     }
 
     public override void OnLeftRoom() //  PhotonNetwork.LeaveRoom()이 불리면 자동으로 불림
     {
         SceneManager.LoadScene("Lobby");
-        Debug.Log("방에서 나가서 로비로 옴2");
+        Debug.Log("방에서 로비로 옴2");
     }
 }
