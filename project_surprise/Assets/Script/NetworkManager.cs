@@ -30,6 +30,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             Debug.Log("방에서 로비로 옴3");
             PhotonNetwork.LocalPlayer.CustomProperties["준비완료"] = 0;
+            PhotonNetwork.LocalPlayer.CustomProperties["Live"] = 1;
             nicknameInputPanel.SetActive(false);
             joinRoomPanel.SetActive(true);
         }
@@ -55,6 +56,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         PhotonNetwork.LocalPlayer.CustomProperties.Add("닉네임", PhotonNetwork.LocalPlayer.NickName);
         PhotonNetwork.LocalPlayer.CustomProperties.Add("준비완료", 0);
+        PhotonNetwork.LocalPlayer.CustomProperties.Add("Live", 1);
 
 
         PhotonNetwork.ConnectUsingSettings(); // 닉네임 입또構 Go!버튼 누르면 설정한 정보로 마스터서버 접속 시도

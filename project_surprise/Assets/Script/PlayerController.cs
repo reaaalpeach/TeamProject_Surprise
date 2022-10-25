@@ -49,18 +49,28 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField] ParticleSystem runParticle;
     bool isRunPaticlePlay = false;
 
+    //Dead
+    DeadCameraSetup deadCameraSetup;
     // 킬로그에서 사용할 해시테이블
     Hashtable ht = new Hashtable();
 
     public bool isMove { get; private set; }
     public bool isReady { get; private set; }
 
+    public bool isDead { get; private set; }
+
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
 
         if (SceneManager.GetActiveScene().name == "GameScene") // 게임씬에서는 닉네임패널 끄기
+        {
             playerName.gameObject.SetActive(false);
+            if(photonView.IsMine)
+            {
+                deadCameraSetup = GameObject.FindObjectOfType<DeadCameraSetup>();
+            }
+        }
 
         if (PhotonNetwork.IsConnected)
             pv.RPC("GetPlayerName", RpcTarget.All);
@@ -195,7 +205,11 @@ public class PlayerController : MonoBehaviourPunCallbacks
     IEnumerator Die()
     {
         animator.SetTrigger("Die");
-        //PhotonNetwork.LocalPlayer.CustomProperties["준비완료"] = 0;
+        PhotonNetwork.LocalPlayer.CustomProperties["준비완료"] = 0;
+        if(photonView.IsMine)
+        {
+            deadCameraSetup.gameObject.SetActive(true);
+        }
 
         yield return new WaitForSeconds(1.8f);
         PhotonNetwork.Destroy(gameObject);
