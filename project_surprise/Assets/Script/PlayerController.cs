@@ -100,7 +100,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
             attackPos.gameObject.name = PhotonNetwork.LocalPlayer.NickName;
             gameObject.name = PhotonNetwork.LocalPlayer.NickName;
             playerName.text = PhotonNetwork.LocalPlayer.NickName;
-            if (PhotonNetwork.IsMasterClient) Debug.Log("마스터 클라이언트1");
         }
         else
         {
