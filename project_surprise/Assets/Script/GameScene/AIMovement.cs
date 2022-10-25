@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class AIMovement : MonoBehaviour
 {
@@ -38,11 +39,12 @@ public class AIMovement : MonoBehaviour
     Rigidbody rigid;
     Animator animator;
     Collider col;
-    PhotonView pv;
+    Hashtable ht = new Hashtable();
 
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.name = "AI";
         rigid = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 
@@ -127,7 +129,7 @@ public class AIMovement : MonoBehaviour
     {
         animator.SetTrigger("Die");
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.8f);
         PhotonNetwork.Destroy(gameObject);
     }
 
@@ -136,6 +138,9 @@ public class AIMovement : MonoBehaviour
         if (other.CompareTag("Attack"))
         {
             StartCoroutine("Die");
+            ht["°ø°Ý"] = other.gameObject.name;
+            ht["Á×À½"] = gameObject.name;
         }
+        PhotonNetwork.LocalPlayer.SetCustomProperties(ht);
     }
 }
