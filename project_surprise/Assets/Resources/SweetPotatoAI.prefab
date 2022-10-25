@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5515254510602809089}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: upper_leg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5812300214518460088}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: upper_arm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8706185075370389013}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: lower_leg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376555454684772385}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8520097454510606326}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: lower_arm.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 203338296354974182}
   - component: {fileID: 241283600699867231}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: AlmondRJ_Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7338175339179115399}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: lower_arm.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8059963160701672404}
   - component: {fileID: 6328812535633590110}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: AlmondRJ_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2831650734181524693}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: lower_leg.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 267587789602060768}
   - component: {fileID: 7133557544881155631}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: AlmondRJ_Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5776368493191642074}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: upper_leg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7948473181558433389}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: lower_leg.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4815936460102187985}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1770219369043400657}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: upper_arm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,7 +648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1789244810566152238}
   - component: {fileID: 6665428808507175029}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: AlmondRJ_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5766337333731252733}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: AlmondRJ_Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,7 +776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8955113361009779672}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6859022029956176357}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: lower_leg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2929835773525635278}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 732969112623636382}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: lower_arm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,7 +906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3805684094999704456}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,7 +948,7 @@ GameObject:
   - component: {fileID: 2173941238313843883}
   - component: {fileID: 2419655407510982148}
   - component: {fileID: 8647227800958658469}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: SweetPotatoAI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1209,7 +1209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2183118388073876881}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: lower_arm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5,6 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
 using Cinemachine;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviourPunCallbacks
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     //Dead
     DeadCameraSetup deadCameraSetup;
+    // 킬로그에서 사용할 해시테이블
+    Hashtable ht = new Hashtable();
 
     public bool isMove { get; private set; }
     public bool isReady { get; private set; }
@@ -96,15 +99,24 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
         Move();
         animator.SetBool("Walk", isMove);
+
     }
 
     [PunRPC]
     void GetPlayerName()
     {
         if (photonView.IsMine)
+        {
+            attackPos.gameObject.name = PhotonNetwork.LocalPlayer.NickName;
+            gameObject.name = PhotonNetwork.LocalPlayer.NickName;
             playerName.text = PhotonNetwork.LocalPlayer.NickName;
+        }
         else
+        {
+            attackPos.gameObject.name = pv.Owner.NickName;
+            gameObject.name = pv.Owner.NickName;
             playerName.text = pv.Owner.NickName;
+        }
     }
 
     void Move()
@@ -174,9 +186,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
             }
         }
 
-        //Particle V1 끊김
-        //if(playerInput.run) { runParticle.Emit(30); }
-
         //Particle V2 연속
         //continuous
         if (playerInput.run && !isRunPaticlePlay)
@@ -197,13 +206,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         animator.SetTrigger("Die");
         PhotonNetwork.LocalPlayer.CustomProperties["준비완료"] = 0;
-        PhotonNetwork.LocalPlayer.CustomProperties["Live"] = 0;
         if(photonView.IsMine)
         {
             deadCameraSetup.gameObject.SetActive(true);
         }
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.8f);
         PhotonNetwork.Destroy(gameObject);
     }
 
@@ -230,8 +238,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         if(other.CompareTag("Attack"))
         {
-            StartCoroutine("Die");
-        }
-    }
+            PhotonNetwork.LocalPlayer.CustomProperties.Add("공격", null);
+            PhotonNetwork.LocalPlayer.CustomProperties.Add("죽음", null);
 
+            StartCoroutine("Die");
+
+            ht["공격"] = other.gameObject.name;
+            ht["죽음"] =  gameObject.name;
+        }
+        PhotonNetwork.LocalPlayer.SetCustomProperties(ht);
+    }
 }

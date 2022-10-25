@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 35159016616327474}
   - component: {fileID: 35159016616327484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 114821731941578862}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: upper_arm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3533736259947017}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: upper_leg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2800421599772029976}
   - component: {fileID: 3221472143445729258}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: MacadamiaRJ_Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5086362632969676518}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: lower_arm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5757598056274955949}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: upper_leg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1618613418798222786}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 14459864755708402}
   - component: {fileID: 5514973435731492688}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: MacadamiaRJ_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 1247018744293358576}
   - component: {fileID: 6746218988295296544}
   - component: {fileID: 1944404559354425086}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Potato
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -743,7 +743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3415270163125711566}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3869205094124393396}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: lower_leg.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8602995339703849671}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: lower_leg.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7686824365726390731}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: lower_arm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,7 +870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7965823913331955481}
   - component: {fileID: 952245462723657333}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: MacadamiaRJ_Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -966,7 +966,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8265465381730597530}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: lower_arm.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -997,7 +997,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6184497022693129229}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: upper_arm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,8 +1063,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.05}
-  m_Center: {x: 0, y: 0, z: -0.04}
+  m_Size: {x: 0.1, y: 0.1, z: 0.07}
+  m_Center: {x: 0, y: 0, z: -0.02}
 --- !u!1 &6824811051274555077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,7 +1074,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 834475803043284368}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: lower_leg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1109,7 +1109,7 @@ GameObject:
   - component: {fileID: 8225474076101571237}
   - component: {fileID: 4739501695846647366}
   - component: {fileID: 9100908305151637939}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1216,7 +1216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7575243451460039456}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: MacadamiaRJ_Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1248,7 +1248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 48738764538730016}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1280,7 +1280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8964726578703146053}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3286686152731265000}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1345,7 +1345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6828322350825421508}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: lower_leg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4565058176530256038}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: lower_arm.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1409,7 +1409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6038037015981428747}
   - component: {fileID: 2242359000406200632}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: MacadamiaRJ_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1504,12 +1504,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 3268114656566030696}
     m_Modifications:
     - target: {fileID: 100000, guid: 9cf8cd683e67f014abd2f7b208cbe437, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9cf8cd683e67f014abd2f7b208cbe437, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 9cf8cd683e67f014abd2f7b208cbe437, type: 3}
       propertyPath: m_Name
       value: FX Steam Small Loop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9cf8cd683e67f014abd2f7b208cbe437, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 9cf8cd683e67f014abd2f7b208cbe437, type: 3}
       propertyPath: m_IsActive
