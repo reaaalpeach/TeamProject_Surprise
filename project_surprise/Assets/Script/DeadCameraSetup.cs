@@ -34,7 +34,7 @@ public class DeadCameraSetup : MonoBehaviourPunCallbacks
 
     public void FindOnPlayer()
     {
-        playerList.RemoveAll(player => player == null);//죽으면 사라지는 플레이어를 리스트에서 삭제
+        //playerList.RemoveAll(player => player == null);//죽으면 사라지는 플레이어를 리스트에서 삭제
 
         while(playerList[playerlistId] == null)//혹시나 죽었을 때 오브젝트가 리스트에서 삭제되는 것이 느릴 때를 방지한 코드
         {
